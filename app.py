@@ -12,9 +12,12 @@ def pong():
 		pass
 		return jsonify({'msg': 'pong'})
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['GET', 'POST'])
 def game():
-	if request.method == 'POST':
+	if request.method == 'GET':
+		pass
+		return jsonify({'msg': 'Welcome to hangman'})
+	elif request.method == 'POST':
 		pass
 		req = request.get_json()
 
