@@ -26,7 +26,7 @@ def game():
 			'msg': None
 		}
 		
-		res['msg'] = str(req)
+		return res['msg'] = str(req)
 
 		try:
 			game = Game.check(**req)
