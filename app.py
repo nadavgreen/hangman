@@ -19,7 +19,7 @@ def game():
 		return jsonify({'msg': 'Welcome to hangman microservice'})
 	elif request.method == 'POST':
 		pass
-		req = request.get_json(force=True)
+		req = request.get_json()
 
 		game = None
 		res = {
