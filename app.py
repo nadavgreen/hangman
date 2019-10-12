@@ -19,15 +19,13 @@ def game():
 		return jsonify({'msg': 'Welcome to hangman microservice'})
 	elif request.method == 'POST':
 		pass
-		req = request.get_json()
+		req = request.get_json(force=True)
 
 		game = None
 		res = {
 			'msg': None
 		}
 		
-		return res['msg'] = str(req)
-
 		try:
 			game = Game.check(**req)
 		except TypeError as err:
