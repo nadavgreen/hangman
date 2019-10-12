@@ -10,7 +10,7 @@ app = Flask(__name__)
 def pong():
 	if request.method == 'GET':
 		pass
-		return jsonify({'pong'})
+		return jsonify({"msg": "pong"})
 
 @app.route('/', methods=['GET', 'POST'])
 def game():
@@ -35,7 +35,7 @@ def game():
 		else:
 			res['msg'] = game
 
-		return jsonify(res['msg'])
+		return jsonify(res)
 
 if __name__ == '__main__':
 	app.debug = True
