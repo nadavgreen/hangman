@@ -20,6 +20,7 @@ def game():
 	elif request.method == 'POST':
 		pass
 		req = request.get_json()
+		data = req.data
 
 		game = None
 		res = {
@@ -27,7 +28,7 @@ def game():
 		}
 
 		try:
-			game = Game.check(**req)
+			game = Game.check(**data)
 		except TypeError as err:
 			res['msg'] = str(err)
 		except ValueError as err:
