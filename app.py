@@ -16,7 +16,7 @@ def pong():
 def game():
 	if request.method == 'GET':
 		pass
-		return jsonify({'msg': 'Welcome to hangman'})
+		return jsonify({'msg': 'Welcome to hangman microservice'})
 	elif request.method == 'POST':
 		pass
 		req = request.get_json()
