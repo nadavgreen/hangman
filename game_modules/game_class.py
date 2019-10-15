@@ -9,10 +9,12 @@ class Game:
 		guesses.extend(letter for letter in guess if letter not in guesses)
 		lives, solved = Game._remaining_lives(guesses, random_word)
 
+		
+
 		return {
 			'lives': lives,
 			'guesses': guesses,
-			'random_word': random_word,
+			'random_word': Game._format(random_word, guesses),
 			'solved': solved
 		}
 
@@ -63,3 +65,14 @@ class Game:
 				break
 
 		return lives, solved
+
+	@staticmethod
+	def _format(random_word, guesses):
+		word = ''
+		for letter in random_word:
+			if letter in guesses:
+				word += 'letter'
+			else:
+				word += '*'
+
+		return word
