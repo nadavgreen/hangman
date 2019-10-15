@@ -10,13 +10,15 @@ class Game:
 		lives, solved = Game._remaining_lives(guesses, random_word)
 
 		
-
-		return {
+		data = {
 			'lives': lives,
 			'guesses': guesses,
 			'random_word': Game._format(random_word, guesses),
 			'solved': solved
 		}
+		if not lives:
+			data['random_word'] = random_word
+		return data
 
 	@staticmethod
 	def _check_guess(guess, random_word):
