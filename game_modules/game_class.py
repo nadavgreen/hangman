@@ -71,7 +71,7 @@ class Game:
 		word = ''
 		for letter in random_word:
 			if letter in guesses:
-				word += 'letter'
+				word += letter
 			else:
 				word += '*'
 
